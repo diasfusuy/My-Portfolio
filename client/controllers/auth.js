@@ -1,4 +1,4 @@
-import authAPI from '../api/authAPI';
+import authAPI from '../src/api/authAPI';
 
 //method does actual login, and stores response data to locolstorage
 export async function login({ email, password }) {

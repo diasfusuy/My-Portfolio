@@ -11,7 +11,8 @@
     "install:all": "npm install && (cd ../client && npm install)",
     "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\" ",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node scripts/seedDb.js"
+    "seed": "node scripts/seedDb.js",
+    "prod": "NODE_ENV=production node App.js"
   },
   "type": "module",
   "repository": {
