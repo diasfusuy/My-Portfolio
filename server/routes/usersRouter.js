@@ -1,9 +1,9 @@
 import express from 'express';
-import User from '../models/User';
+import User from '../models/User.js';
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 
-const userRouter = express.Router();
+const usersRouter = express.Router();
 
 // to get all users
 usersRouter.get('/', async (req, res) => {

@@ -3,20 +3,17 @@
   "version": "1.0.0",
   "description": "Demo of a Fullstack React application with a REST API backend, written in Node with Express.js, and MongoDB as database backend",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node run start:backend",
+    "start": "node index.js",
     "start:backend": "nodemon ./index.js",
     "start:frontend": "cd ../client && npm start",
     "build:frontend": "cd ../client && npm run build",
     "install:all": "npm install && (cd ../client && npm install)",
     "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\" ",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node scripts/seedDb.js"
-  },
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fieldse/metana-fullstack-demos.git"
+    "seed": "node scripts/seedDb.js",
+    "prod": "NODE_ENV=production node index.js"
   },
   "keywords": [
     "rest",
@@ -26,12 +23,6 @@
     "express",
     "mongo"
   ],
-  "author": "matt fields -- matt@mattfields.dev",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fieldse/metana-fullstack-demos/issues"
-  },
-  "homepage": "https://github.com/fieldse/metana-fullstack-demos#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
