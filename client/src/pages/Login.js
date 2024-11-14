@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from '..context/AuthProvider';
+import { useAuth } from '../context/AuthProvider';
 
 // The login view
 function LoginPage() {
-  const { user, logout, isLoggedIn } = useAuth();
+  const { logout, isLoggedIn, login } = useAuth(); // Assuming login is provided by useAuth
 
   return (
     <div>
@@ -15,25 +15,26 @@ function LoginPage() {
       </div>
       {isLoggedIn ? (
         <div>
-          <LogoutButton onClick={logoutAction} />
+          <LogoutButton onClick={logout} />
         </div>
       ) : (
-        <LoginForm setIsLoggedIn={setIsLoggedIn} />
+        <LoginForm login={login} />
       )}
     </div>
   );
 }
-const LogoutButton = ({ onClick }) => (
+
+export const LogoutButton = ({ onClick }) => (
   <button onClick={onClick}>
     Log out
   </button>
 );
 
 // The login form
-function LoginForm({ setIsLoggedIn }) {
+function LoginForm({ login }) {
   const [hasError, setHasError] = useState(false);
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [canSubmit, setCanSubmit] = useState(false);
   const forgotPasswordUrl = '#';
 
@@ -45,7 +46,6 @@ function LoginForm({ setIsLoggedIn }) {
       const user = await login({ email, password });
       // Do something with the user here...
       console.log('user: ', user);
-      setIsLoggedIn(true);
       setHasError(false);
       console.log('logged in');
     } catch (err) {
@@ -71,11 +71,7 @@ function LoginForm({ setIsLoggedIn }) {
         </div>
       )}
       <div>
-        <label
-          htmlFor="username"
-        >
-          Username
-        </label>
+        <label htmlFor="username">Username</label>
         <input
           id="username"
           type="text"
@@ -84,37 +80,23 @@ function LoginForm({ setIsLoggedIn }) {
         />
       </div>
       <div>
-        <label
-          htmlFor="password"
-        >
-          Password
-        </label>
+        <label htmlFor="password">Password</label>
         <input
           id="password"
           type="password"
           placeholder="******************"
           onChange={(e) => setPassword(e.target.value)}
         />
-        {hasError && (
-          <p>
-            Please choose a password.
-          </p>
-        )}
+        {hasError && <p>Please choose a password.</p>}
       </div>
       <div>
-        <button
-         type="submit"
-         disabled={!canSubmit}
-        >
+        <button type="submit" disabled={!canSubmit}>
           Sign In
         </button>
-        <a
-          href={forgotPasswordUrl}
-        >
-          Forgot Password?
-        </a>
+        <a href={forgotPasswordUrl}>Forgot Password?</a>
       </div>
     </form>
   );
 }
+
 export default LoginPage;

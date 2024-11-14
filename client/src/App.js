@@ -4,6 +4,7 @@ import Contact from './pages/Contact';
 import NavBar from './components/NavBar';
 import ExamplePrivatePage from './pages/ExamplePrivatePage';
 import ProtectedRoute from './components/ProtectedRoute';
+import Profile from './pages/Profile';
 
 function App() {
     return (
