@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
         const user = localStorage.getItem('user');
         const token = localStorage.getItem('authToken');
         if (user && token) {
-            setUser(JSO .parse(user));
+            setUser(JSON.parse(user));
             setToken(token);
             setIsLoggedIn(true);
         }

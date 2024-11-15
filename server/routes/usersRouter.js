@@ -1,5 +1,5 @@
 import express from 'express';
-import User from '../models/User';
+import User from '../models/User.js';
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 
