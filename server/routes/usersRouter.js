@@ -3,7 +3,7 @@ import User from '../models/User';
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 
-const userRouter = express.Router();
+const usersRouter = express.Router();
 
 // to get all users
 usersRouter.get('/', async (req, res) => {

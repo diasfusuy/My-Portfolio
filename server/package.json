@@ -4,7 +4,7 @@
   "description": "Demo of a Fullstack React application with a REST API backend, written in Node with Express.js, and MongoDB as database backend",
   "main": "index.js",
   "scripts": {
-    "start": "node run start:backend",
+    "start": "node App.js",
     "start:backend": "nodemon ./index.js",
     "start:frontend": "cd ../client && npm start",
     "build:frontend": "cd ../client && npm run build",

@@ -1,33 +1,44 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import morgan from 'morgan'; // Import Morgan for logging
 
-// Import morgan for logging
-import morgan from 'morgan';
-
-import { connectToDatabase } from './db/dbconn.js';
-
-const app = express();
-import { PORT } from './config.js';
+import { connectToDatabase } from './db/dbconn.js'; // MongoDB connection function
+import { PORT } from './config.js'; // Import PORT configuration
 import blogsRouter from './routes/blogsRouter.js';
 import usersRouter from './routes/usersRouter.js';
 
-app.use(cors());
+const app = express();
 
-// Configure body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+(async () => {
+  try {
+    // Enable CORS
+    const corsOptions = {
+      origin: ['http://localhost:3000', 'http://localhost:3001'],
+      credentials: true,
+      optionSuccesStatus:200
+    }
+    app.use(cors(corsOptions));
 
-// Configure morgan (combined, common, dev, short, tiny)
-app.use(morgan('combined'));
+    // Configure body parser middleware
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
 
-// Connect to MongoDB
-await connectToDatabase();
+    // Configure Morgan (logging middleware)
+    app.use(morgan('combined'));
 
-// blog routes
-app.use('/api/blogs', blogsRouter);
+    // Connect to MongoDB
+    await connectToDatabase();
 
-// user routes
-app.use('/api/users', usersRouter);
+    // Set up routes
+    app.use('/api/blogs', blogsRouter);
+    app.use('/api/users', usersRouter);
 
-app.listen(PORT, () => console.log(`backend server started on port ${PORT}`));
+    // Start the server
+    app.listen(PORT, () => {
+      console.log(`Backend server started on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start the server:", error);
+  }
+})();

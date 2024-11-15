@@ -1,6 +1,6 @@
 // Miscellaneous config settings
 export const PROXY_HOST = 'http://localhost';
-export const PROXY_PORT = 3001;
+export const PROXY_PORT = 3000;
 
 // Contact information
 export const COPYRIGHT_INFO = '2024 Awesome Web Dev';
