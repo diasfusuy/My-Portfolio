@@ -5,12 +5,16 @@ import NavBar from './components/NavBar';
 import ExamplePrivatePage from './pages/ExamplePrivatePage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './pages/Profile';
+import HeroSection from './components/HeroSection';
+import './components/Global.css';
+
 
 function App() {
     return (
     <Router>
         <NavBar />
         <Routes>
+            <Route path='/' element={<HeroSection/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='/contact' element={<Contact/>} />  
             <Route path='/profile' element={

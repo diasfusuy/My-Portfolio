@@ -1,5 +1,5 @@
 // Miscellaneous config settings
-export const PROXY_HOST = 'http://localhost';
+export const PROXY_HOST = 'https://portfolio.diasfusuy.xyz';
 export const PROXY_PORT = 3000;
 
 // Contact information
