@@ -8,7 +8,7 @@ function ProfileRow({ label, value }) {
             <input type='text' value={value}/>
         </div>
     );
-}
+};
 
 function Profile() {
     const { user, logout } = useAuth();
@@ -27,6 +27,6 @@ function Profile() {
             </div>
         </div>
     );
-}
+};
 
 export default Profile;
