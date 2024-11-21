@@ -1,10 +1,10 @@
 /* TailwindCSS base imports */
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* Colors */
-:root {
+/* :root {
   --body-text-color: #1f1f1f;
   --link-color: #11c453;
   --accent-color: #11c453;
@@ -25,17 +25,17 @@ body {
 }
 
 /* Headings */
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
   color: var(--body-text-color);
-}
+} */
 
 /* Links */
-a,
+/* a,
 a:visited,
 a:active,
 a:hover,
@@ -43,12 +43,12 @@ a:focus {
   color: var(--link-color);
 }
 /* Containers */
-#content {
+/* #content {
   padding: 1rem;
-}
+}  */
 
 /* Code blocks */
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+}  */

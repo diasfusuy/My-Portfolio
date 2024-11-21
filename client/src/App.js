@@ -7,6 +7,9 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './pages/Profile';
 import HeroSection from './components/HeroSection';
 import './components/Global.css';
+import About from './pages/About';
+import Portfolio from './pages/Portfolio';
+import Blogs from './pages/Blogs';
 
 
 function App() {
@@ -15,6 +18,9 @@ function App() {
         <NavBar />
         <Routes>
             <Route path='/' element={<HeroSection/>} />
+            <Route path='/About' element={<About/>} />
+            <Route path='/Portfolio' element={<Portfolio/>} />
+            <Route path='/Blogs' element={<Blogs/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='/contact' element={<Contact/>} />  
             <Route path='/profile' element={
