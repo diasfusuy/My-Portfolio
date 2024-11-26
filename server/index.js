@@ -36,7 +36,10 @@ const __dirname = path.resolve();
     app.use('/api/blogs', blogsRouter);
     app.use('/api/users', usersRouter);
 
-    app.use(express.static(path.join(__dirname, './client/build')));
+    app.use(express.static(path.join(__dirname, '../client/build')));
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+    })
 
     // Start the server
     app.listen(PORT, () => {
