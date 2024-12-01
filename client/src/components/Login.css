@@ -1,0 +1,58 @@
+.center-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+  }
+  
+  .login {
+    text-align: center; /* Center-align text */
+    background: #ffffff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  form {
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack inputs vertically */
+  align-items: center; /* Center-align inputs and buttons */
+  margin-top: 30px;
+  border-color: black;
+}
+
+input, button {
+  width: 100%; /* Make inputs/buttons full width */
+  max-width: 300px; /* Limit the maximum width */
+  padding: 10px;
+  margin-bottom: 15px; /* Add space between elements */
+  border: 1px solid #030303ee;
+  border-radius: 5px;
+  font-size: 16px;
+  border-color: black;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+a:hover {
+  text-decoration: underline;
+}

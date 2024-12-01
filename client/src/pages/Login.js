@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthProvider';
+import '../components/Login.css'
 
 // The login view
 function LoginPage() {
   const { logout, isLoggedIn, login } = useAuth(); // Assuming login is provided by useAuth
 
   return (
-    <div>
-      <div>
+    <div className='container'>
+      <div className='login'>
         <h2>Login</h2>
         <h1>
           {isLoggedIn ? 'You are currently logged in' : 'You are not logged in'}
