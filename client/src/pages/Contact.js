@@ -20,11 +20,11 @@ const Contact = () => {
               <input type="text" id="last-name" placeholder="Last name" />
             </div>
           </div>
-          <div className="form-group">
+          <div className="form-group2">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" placeholder="Email" />
           </div>
-          <div className="form-group">
+          <div className="form-group3">
             <label htmlFor="message">Message</label>
             <textarea id="message" rows="5" placeholder="Message"></textarea>
           </div>
